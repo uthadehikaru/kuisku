@@ -24,7 +24,7 @@ class LoginForm extends Component
             return redirect()->intended('/dashboard');
         }
 
-        $this->addError('email', 'These credentials do not match our records.');
+        $this->addError('email', 'Email atau password salah!');
     }
 
     public function render()

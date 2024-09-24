@@ -1,6 +1,12 @@
 <?php
 
+use App\Http\Controllers\WelcomeController;
 use App\Livewire\LoginForm;
+use App\Livewire\QuizDetail;
+use App\Livewire\QuizForm;
+use App\Livewire\QuizResult;
+use App\Livewire\QuizSession;
+use App\Livewire\RegisterForm;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +20,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome');
+Route::get('/', WelcomeController::class)->name('home');
 Route::get('login', LoginForm::class)->name('login');
+Route::view('quiz-list', 'quiz-list')->name('quiz.list');
+Route::get('quiz/{code}', QuizDetail::class)->name('quiz.detail');
+Route::get('register', RegisterForm::class)->name('register');
 Route::get('logout', function () {
     Auth::logout();
 
@@ -24,4 +33,7 @@ Route::get('logout', function () {
 
 Route::middleware('auth')->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
+    Route::get('session', QuizSession::class)->name('quiz.session');
+    Route::get('result/{code}', QuizResult::class)->name('quiz.result');
+    Route::get('form/quiz/{code?}', QuizForm::class)->name('quiz.form');
 });

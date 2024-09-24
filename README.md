@@ -1,73 +1,96 @@
-# Laravel Project
+# KuisKu Online
 
-This is a Laravel-based web application project.
+KuisKu Online adalah aplikasi web berbasis Laravel untuk platform kuis online interaktif.
 
-## Description
+## Deskripsi
 
-This project is built using the Laravel PHP framework, providing a robust foundation for developing modern web applications. It includes features such as:
+KuisKu Online adalah platform kuis interaktif yang memungkinkan pengguna untuk:
 
-- MVC architecture
-- Eloquent ORM for database interactions
+- Mengikuti berbagai kuis dari beragam topik
+- Membuat dan mengelola kuis sendiri
+- Melihat peringkat dan pencapaian
+- Berinteraksi dengan pengguna lain melalui fitur sosial
+
+Aplikasi ini dibangun menggunakan framework Laravel dan memanfaatkan fitur-fitur seperti:
+
+- Livewire untuk interaksi real-time
+- Eloquent ORM untuk manajemen database
 - Blade templating engine
-- Built-in authentication system
-- RESTful routing
-- Artisan command-line tool
+- Sistem autentikasi bawaan Laravel
+- RESTful API
 
-## Setup Instructions
+## Spesifikasi Kebutuhan
 
-Follow these steps to set up the project on your local machine:
+- PHP 8.1 atau lebih tinggi
+- Composer
+- MySQL 5.7 atau lebih tinggi
+- Node.js dan NPM
+- Web server (Apache atau Nginx)
 
-1. Clone the repository:
+## Instruksi Instalasi
+1. Clone repositori:
    ```
-   git clone https://github.com/your-username/your-project-name.git
+   git clone https://github.com/uthadehikaru/kuisku.git
    ```
 
-2. Navigate to the project directory:
+2. Masuk ke direktori proyek:
    ```
-   cd your-project-name
+   cd kuisku
    ```
 
-3. Install PHP dependencies using Composer:
+3. Instal dependensi PHP:
    ```
    composer install
    ```
 
-4. Copy the example environment file and create a new .env file:
+4. Salin file .env.example menjadi .env:
    ```
    cp .env.example .env
    ```
 
-5. Generate an application key:
+5. Generate kunci aplikasi:
    ```
    php artisan key:generate
    ```
 
-6. Configure your database in the .env file:
+6. Konfigurasi database di file .env:
    ```
    DB_CONNECTION=mysql
    DB_HOST=127.0.0.1
    DB_PORT=3306
-   DB_DATABASE=your_database_name
-   DB_USERNAME=your_database_username
-   DB_PASSWORD=your_database_password
+   DB_DATABASE=kuisku_online
+   DB_USERNAME=root
+   DB_PASSWORD=
    ```
 
-7. Run database migrations:
+7. Jalankan migrasi database:
    ```
-   php artisan migrate
+   php artisan migrate --seed
    ```
 
-8. Start the development server:
+8. Buat symlink untuk penyimpanan:
+   ```
+   php artisan storage:link
+   ```
+
+9. Jalankan server development:
    ```
    php artisan serve
    ```
 
-9. Visit `http://localhost:8000` in your web browser to see the application.
+11. Buka `http://localhost:8000` di browser Anda untuk mengakses aplikasi.
 
-## Additional Configuration
+## Demo
 
-For more detailed configuration and customization options, please refer to the [Laravel documentation](https://laravel.com/docs).
+Silahkan cek demo aplikasi kami di [https://kuisku.zuhriutama.com](https://kuisku.zuhriutama.com)
 
-## License
+email : admin@laravel.test
+password : secret
 
-This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Konfigurasi Tambahan
+
+Untuk konfigurasi lebih lanjut, silakan merujuk ke [dokumentasi Laravel](https://laravel.com/docs).
+
+## Lisensi
+
+Proyek ini adalah perangkat lunak open-source yang dilisensikan di bawah [lisensi MIT](https://opensource.org/licenses/MIT).
